@@ -22,7 +22,7 @@ workspace "Mod"
         filter "configurations:Release"
             libdirs {"ModDLL.dll", "src/ModDLL/lib/MRelease"}
             defines {"NDEBUG"}
-            Optimize "On"
+            optimize "On"
 
         
     
