@@ -16,11 +16,11 @@ workspace "Mod"
         includedirs {"src/", "src/ModDLL/include"}
 
         filter "configurations:Debug"
-            libdirs {"ModDLL.dll", "src/ModDLL/lib/Debug"}
+            libdirs {"ModDLL.dll", "src/ModDLL/lib/MDebug"}
             defines {"DEBUG"}
             symbols "On"
         filter "configurations:Release"
-            libdirs {"ModDLL.dll", "src/ModDLL/lib/Release"}
+            libdirs {"ModDLL.dll", "src/ModDLL/lib/MRelease"}
             defines {"NDEBUG"}
             Optimize "On"
 
