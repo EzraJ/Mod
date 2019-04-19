@@ -8,21 +8,21 @@ workspace "Mod"
     configurations {"Debug", "Release"}
     filter {"system:windows", "action:vs"}
     systemversion(os.winSdkVersion() .. ".0")
-    project "Mod"
-        kind "ConsoleApp"
-        language "C++"
-        files {"src/**.cpp", "src/**.h", "src/**.hpp", "src/**.c"}
-        targetdir "bin/%{cfg.buildcfg}"
-        includedirs {"src/", "src/ModDLL/include"}
+project "Mod"
+    kind "ConsoleApp"
+    language "C++"
+    files {"src/**.cpp", "src/**.h", "src/**.hpp", "src/**.c"}
+    targetdir "bin/%{cfg.buildcfg}"
+    includedirs {"src/", "src/ModDLL/include"}
 
-        filter "configurations:Debug"
-            libdirs {"ModDLL.dll", "src/ModDLL/lib/MDebug"}
-            defines {"DEBUG"}
-            symbols "On"
-        filter "configurations:Release"
-            libdirs {"ModDLL.dll", "src/ModDLL/lib/MRelease"}
-            defines {"NDEBUG"}
-            optimize "On"
+    filter "configurations:Debug"
+        libdirs {"ModDLL.dll", "src/ModDLL/lib/MDebug"}
+        defines {"DEBUG"}
+        symbols "On"
+    filter "configurations:Release"
+        libdirs {"ModDLL.dll", "src/ModDLL/lib/MRelease"}
+        defines {"NDEBUG"}
+        optimize "On"
 
         
     
