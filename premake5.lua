@@ -17,10 +17,12 @@ project "Mod"
 
     filter "configurations:Debug"
         libdirs {"ModDLL.dll", "src/ModDLL/lib/MDebug"}
+		libdirs {"ModDLL.lib", "src/ModDLL/lib/MDebug"}
         defines {"DEBUG"}
         symbols "On"
     filter "configurations:Release"
         libdirs {"ModDLL.dll", "src/ModDLL/lib/MRelease"}
+		libdirs {"ModDLL.lib", "src/ModDLL/lib/MRelease"}
         defines {"NDEBUG"}
         optimize "On"
 
