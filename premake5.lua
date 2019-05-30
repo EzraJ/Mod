@@ -16,13 +16,13 @@ project "Mod"
     includedirs {"src/", "src/ModDLL/include"}
 
     filter "configurations:Debug"
-        libdirs {"ModDLL.dll", "src/ModDLL/lib/MDebug"}
-		libdirs {"ModDLL.lib", "src/ModDLL/lib/MDebug"}
+        libdirs {"src/ModDLL/lib/MDebug"}
+		links   {"ModDLL.lib"}
         defines {"DEBUG"}
         symbols "On"
     filter "configurations:Release"
-        libdirs {"ModDLL.dll", "src/ModDLL/lib/MRelease"}
-		libdirs {"ModDLL.lib", "src/ModDLL/lib/MRelease"}
+		libdirs {"src/ModDLL/lib/MRelease"}
+		links {"ModDLL.lib"}
         defines {"NDEBUG"}
         optimize "On"
 
